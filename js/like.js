@@ -1,5 +1,6 @@
 var cButton = document.querySelectorAll('.click-button');
 var like_req_in_progress = false;
+
 function favoriteBlog(blogId = '') {
 
     if (like_req_in_progress) {
@@ -19,23 +20,16 @@ function favoriteBlog(blogId = '') {
             var bId = document.getElementById(blogId);
             if (res === 'added') {
                 bId.classList.add("liked");
-              //  alert('added');
-               // console.log(); here find the items svg and add class like
+                // console.log(); here find the items svg and add class like
                 bId.children[3].classList.add('cbLike');
             }
             if (res === 'removed') {
-
                 bId.classList.remove("liked");
-                //alert('removed');
-
                 bId.children[3].classList.remove('cbLike');
-
             }
 
         }
-
     };
-
     req.send("id=" + blogId);
 }
 
@@ -46,22 +40,13 @@ var leng = cButton.length;
 for (i = 0; i < leng; i++) {
     let c = cButton.item(i);
     c.addEventListener("click", (e) => {
-
         e.preventDefault();
         blogId = e.target.parentElement.id;
         favoriteBlog(blogId);
- 
     });
-
 }
 
-var scripts = document.getElementsByTagName("script");
 
-for (i = 0; i < scripts.length; i++) {
-    console.log(scripts.item(i));
-    console.log('Textual: ' +  i );
-   
-}
 
 
 
