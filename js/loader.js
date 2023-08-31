@@ -31,8 +31,7 @@ function reloadJs(src) {
 
 
     var myEle = document.querySelector("#myElement");
-    if (myEle == null) {
-        console.log('like dont exist');
+    if (myEle == null) { 
 
         var head = document.getElementsByTagName('body')[0];
         var scrip = document.createElement('script');
